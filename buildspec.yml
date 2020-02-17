@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Entered the install phase...
+      - pip install --upgrade aws-sam-cli
+  build:
+    commands:
+      - sam package --template template.yml --s3-bucket for-source-code --output-template packaged-template.yaml
+
+artifacts:
+  type: zip
+  files:
+    - packaged-template.yaml
+    
+    
