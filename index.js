@@ -2,7 +2,7 @@ exports.handler = async (event) => {
     // TODO implement
     const response = {
         statusCode: 200,
-        body: JSON.stringify('Hi from harika qa stage Lambda!'),
+        body: JSON.stringify('Hi from harika $env stage Lambda!'),
 
     };
     return response;
