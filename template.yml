@@ -34,4 +34,6 @@ Resources:
       RoutingConfig:
         AdditionalVersionWeights:
           - FunctionVersion: !GetAtt newnewVersion.Version
+            FunctionWeight: 1
+
  
