@@ -15,4 +15,10 @@ Resources:
       Description: v1
       ProvisionedConcurrencyConfig:
         ProvisionedConcurrentExecutions: 20
-      
+  alias:
+    Type: AWS::Lambda::Alias
+    Properties:
+      FunctionName: !Ref HelloWorldFunction
+      FunctionVersion: !GetAtt Version.Version
+      Name: qa
+
