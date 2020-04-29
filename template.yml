@@ -7,18 +7,12 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      Runtime: nodejs12.x      
-      "Policies": [
-          "AmazonS3FullAccess",
-          "AWSCodePipelineCustomActionAccess",
-          {
-            "Version" : "2012-10-17",
-            "Statement": [
-              {
-                "Effect": "Allow",
-                "Action": ["lambda:PublishVersion"],
-                "Resource": "*"
-              }
-            ]
-          }
-        ]
+      Runtime: nodejs12.x  
+  version:
+    Type: AWS::Lambda::Version
+    Properties: 
+      FunctionName: !Ref function
+      Description: v1
+      ProvisionedConcurrencyConfig:
+        ProvisionedConcurrentExecutions: 20
+      
