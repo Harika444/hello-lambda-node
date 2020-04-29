@@ -7,4 +7,18 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      Runtime: nodejs12.x
+      Runtime: nodejs12.x      
+      "Policies": [
+          "AmazonS3FullAccess",
+          "AWSCodePipelineCustomActionAccess",
+          {
+            "Version" : "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": ["lambda:PublishVersion"],
+                "Resource": "*"
+              }
+            ]
+          }
+        ]
