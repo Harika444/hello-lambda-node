@@ -8,17 +8,15 @@ Resources:
     Properties:
       Handler: index.handler
       Runtime: nodejs12.x  
+
   version:
     Type: AWS::Lambda::Version
-    Properties: 
+    Properties:
       FunctionName: !Ref HelloWorldFunction
       Description: v1
-      ProvisionedConcurrencyConfig:
-        ProvisionedConcurrentExecutions: 20
   alias:
     Type: AWS::Lambda::Alias
     Properties:
       FunctionName: !Ref HelloWorldFunction
-      FunctionVersion: !GetAtt Version.Version
+      FunctionVersion: !GetAtt version.Version
       Name: qa
-
