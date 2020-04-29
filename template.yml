@@ -19,6 +19,11 @@ Resources:
     Properties:
       FunctionName: !Ref HelloWorldFunction
       Description: v2
+  newnewVersion:
+    Type: AWS::Lambda::Version
+    Properties:
+      FunctionName: !Ref HelloWorldFunction
+      Description: v2
 
   alias:
     Type: AWS::Lambda::Alias
@@ -28,5 +33,5 @@ Resources:
       Name: qa
       RoutingConfig:
         AdditionalVersionWeights:
-          - FunctionVersion: !GetAtt newVersion.Version
-            FunctionWeight: 0.5
+          - FunctionVersion: !GetAtt newnewVersion.Version
+ 
