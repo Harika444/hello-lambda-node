@@ -8,3 +8,15 @@ Resources:
     Properties:
       Handler: index.handler
       Runtime: nodejs12.x
+      
+  version:
+    Type: AWS::Lambda::Version
+    Properties:
+      FunctionName: !Ref HelloWorldFunction
+      Description: v1
+  alias:
+    Type: AWS::Lambda::Alias
+    Properties:
+      FunctionName: !Ref HelloWorldFunction
+      FunctionVersion: !GetAtt version.Version
+      Name: qa
