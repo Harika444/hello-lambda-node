@@ -11,7 +11,7 @@ Resources:
   version:
     Type: AWS::Lambda::Version
     Properties: 
-      FunctionName: !Ref function
+      FunctionName: !Ref HelloWorldFunction
       Description: v1
       ProvisionedConcurrencyConfig:
         ProvisionedConcurrentExecutions: 20
