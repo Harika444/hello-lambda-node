@@ -7,7 +7,7 @@ phases:
       - pip install --upgrade aws-sam-cli
   build:
     commands:
-      - sam package --template-file template.yml --s3-bucket for-source-code --output-template-file packaged-template.yaml
+      - sam package --template-file template.yml --s3-bucket codepipeline-pipelineartifactsbucket-1jcubegnpk650 --output-template-file packaged-template.yaml
 
 artifacts:
   type: zip
